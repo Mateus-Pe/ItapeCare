@@ -1,16 +1,13 @@
-import { Component, HostListener  } from '@angular/core';
-import { NgModule } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, CommonModule],
-  templateUrl: './app.home.html',
-  styleUrl: './app.home.scss'
+  selector: 'app-home',
+  imports: [CommonModule],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class AppComponent {
-  title = 'ItapeCare';
+export class HomeComponent {
 
   isCollapsed: boolean = true;
   isExpanded: boolean = false;
