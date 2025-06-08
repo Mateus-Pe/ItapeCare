@@ -1,0 +1,21 @@
+.custom-input {
+  position: relative;
+}
+
+.custom-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #0d6efd;
+  font-size: 1.2rem;
+}
+
+.custom-form-control {
+  padding-left: 2.5rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  height: 45px;
+  font-size: 1rem;
+}
