@@ -14,24 +14,36 @@ export class LoginComponent {
   email = '';
   password = '';
   error = '';
+  loading = false;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   login() {
+    this.loading = true;
+    this.error = '';
+
     const data = {
       email: this.email,
       password: this.password
     };
 
-    this.http.post<any>('http://localhost:8080/insert', data)
+    this.http.post<any>('http://localhost:8080/login', data)
       .subscribe({
         next: (res) => {
-          // Sucesso - salva o token e redireciona
-          //localStorage.setItem('token', res.data?.token);
+          console.log('Login success:', res);
+          if (res && res.success === true) {
+          console.log('Login OK, redirecionando...');
           this.router.navigate(['/home']);
+        } else {
+          console.log('Login falhou:', res);
+          this.error = res.message || 'Credenciais inválidas';
+        }
+        this.loading = false;
         },
         error: (err) => {
+          console.error('Login error:', err); // <- Para debug
           this.error = err.error?.message || 'Erro ao fazer login';
+          this.loading = false;
         }
       });
   }

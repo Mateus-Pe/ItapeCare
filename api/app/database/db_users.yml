@@ -2,5 +2,7 @@
 
 # you can add all the columns you want under the columns key
 columns:
-  email: string
+  email:
+    type: string
+    unique: true
   password: string

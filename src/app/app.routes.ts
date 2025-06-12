@@ -6,7 +6,7 @@ import { MenuComponent } from './menu/menu/menu.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent }, // SEM o AuthGuard
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent}, //, canActivate: [AuthGuard] },
   { path: 'menu', component: MenuComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];

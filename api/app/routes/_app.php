@@ -5,5 +5,4 @@ app()->get('/', function () {
 });
 
 app()->get('/perfil', 'PerfilsController@index');
-app()->post('/insert', [\App\Controllers\Auth\LoginController::class, 'store']);
-
+app()->post('/login', 'InserttestsController@index');
