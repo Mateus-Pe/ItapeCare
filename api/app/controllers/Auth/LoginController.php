@@ -13,8 +13,8 @@ class LoginController extends Controller
 
         if (!$data) {
             return response()->exit([
-                'message' => 'Validation failed',
-                'data' => request()->errors(),
+                'message' => 'Validação falhou',
+                'errors' => request()->errors(),
             ], 400);
         }
 
@@ -22,19 +22,23 @@ class LoginController extends Controller
 
         if (!$success) {
             return response()->exit([
-                'message' => 'Login failed',
-                'data' => auth()->errors(),
+                'message' => 'Login inválido',
+                'errors' => auth()->errors(),
             ], 400);
         }
 
-        response()->json([
-            'message' => 'Login successful',
-            'data' => auth()->data(),
-        ]);
+        return response()->json([
+            'message' => 'Login realizado com sucesso',
+            'data' => auth()->data(), // Certifique-se que isso inclui o token ou ID do usuário
+        ], 200);
     }
 
     public function logout()
     {
         auth()->logout();
+
+        return response()->json([
+            'message' => 'Logout realizado com sucesso',
+        ]);
     }
 }

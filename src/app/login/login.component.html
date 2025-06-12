@@ -1,42 +1,58 @@
-<section class="vh-100 d-flex flex-column align-items-center justify-content-center bg-light">
-    <div class="container text-center">
-          <div class="mb-3">
-            <img src="assets/logo.png" alt="Logo" width="128">
-          </div>
+<section class="min-h-screen flex flex-col items-center justify-center bg-slate-300 px-4">
+  <div class="text-center w-full max-w-md">
+    <div class="mb-6">
+      <img src="assets/logo.png" alt="Logo" class="w-32 mx-auto" />
+    </div>
 
-          <p class="text-muted mb-4">
-            Plataforma integrada para mapeamento e gestão da saúde em Itapetininga
-          </p>
+    <p class="text-gray-500 mb-6">
+      Plataforma integrada para mapeamento e gestão da saúde em Itapetininga
+    </p>
 
-            <form>
-              <div class="custom-input mb-3 position-relative" style="max-width: 25rem; margin: 0 auto;">
-                <i class="bi bi-person custom-icon"></i>
-                <input type="email" id="form3Example3" placeholder="E-mail" class="form-control custom-form-control" />
-              </div>
+    <form (ngSubmit)="login()">
+      <div class="relative mb-4">
+        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M5.121 17.804A13.937 13.937 0 0112 15c2.317 0 4.482.525 6.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </span>
+        <input type="email" placeholder="E-mail" [(ngModel)]="email"
+               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
 
-              <div class="custom-input mb-3 position-relative" style="max-width: 25rem; margin: 0 auto;">
-                <i class="bi bi-lock-fill custom-icon"></i>
-                <input type="password" id="form3Example4" placeholder="Senha" class="form-control custom-form-control" />
-              </div>
+      <div class="relative mb-4">
+        <span class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 14c-4 0-6 2-6 4v1h12v-1c0-2-2-4-6-4z" />
+          </svg>
+        </span>
+        <input type="password" placeholder="Senha" [(ngModel)]="password"
+               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
 
-              <div class="d-flex justify-content-between align-items-center mb-3 text-start" style="max-width: 25rem; margin: 0 auto;">
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="lembrar">
-                  <label class="form-check-label" for="lembrar">Lembrar-se</label>
-                </div>
-                <a href="#" class="text-decoration-none text-primary small">Esqueceu sua senha?</a>
-              </div>
+      <div class="flex items-center justify-between mb-4 text-sm">
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" class="form-checkbox text-blue-600" />
+          <span>Lembrar-se</span>
+        </label>
+        <a href="#" class="text-blue-600 hover:underline">Esqueceu sua senha?</a>
+      </div>
 
-              <div style="max-width: 25rem; margin: 0 auto;">
-                <button type="submit" class="btn btn-primary btn-block mb-4" style="width: 100%;">
-                  Entrar
-                </button>
-              </div>
+      <div class="mb-4">
+        <button type="submit"
+                class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+          Entrar
+        </button>
+      </div>
 
-              <div class="form-check d-flex justify-content-center mb-4">
-                  <a href="#" class="text-decoration-none text-primary">Não possui uma conta?</a>
-              </div>
-
-            </form>
-          </div>
+      <div class="text-center text-sm">
+        <a href="#" class="text-blue-600 hover:underline">Não possui uma conta?</a>
+      </div>
+    </form>
+  </div>
 </section>

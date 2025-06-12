@@ -1,0 +1,6 @@
+# schema files add auto-increments and timestamps by default
+
+# you can add all the columns you want under the columns key
+columns:
+  email: string
+  password: string
